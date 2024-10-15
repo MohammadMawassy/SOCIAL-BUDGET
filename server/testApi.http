@@ -1,0 +1,86 @@
+##PHASE
+# POST  http://localhost:3001/login HTTP/1.1  
+# content-type: application/json
+
+# {
+#     "username": "admin",
+#     "password": "admin1234"
+# }   
+
+# GET  http://localhost:3001/auth HTTP/1.1  
+# Cookie: connect.sid=s%3A83xLaomVp_m9Zef1o--Jddm0rcotgsWq.94jwzOoBed9UGKyAhQuKvEUB3plh44El8XP8CGLJ1%2Fc
+
+# GET http://localhost:3001/phase HTTP/1.1
+
+# GET http://localhost:3001/phase/budget HTTP/1.1
+# Cookie: connect.sid=s%3AleiRNjr4K54eQhEycnTMoD97xMnRZGgG.nyWYQg7N6Zsz59Sl8%2FUIpTYF9StoJrwW5EE5a3qyqh8
+
+# PUT http://localhost:3001/phase/change HTTP/1.1
+
+# PUT http://localhost:3001/phase/budget/800 HTTP/1.1
+# Cookie: connect.sid=s%3AX7eMl--ZO3T59EIWCn0tdDTUWp0XeuOF.t%2BZDqKyuAuPAAcjzvSZwfQD2bcRtYRBp6fZl6%2FT%2FyfQ; Path=/; HttpOnly; SameSite=Strict
+
+# PUT http://localhost:3001/phase/reset HTTP/1.1
+
+
+##USER 
+# GET http://localhost:3001/user HTTP/1.1
+
+# GET http://localhost:3001/user/2 HTTP/1.1
+
+# GET http://localhost:3001/user/name/admin HTTP/1.1
+
+
+##PROPOSALS
+# GET http://localhost:3001/proposal HTTP/1.1
+
+# GET http://localhost:3001/proposal/id/3 HTTP/1.1
+
+# GET http://localhost:3001/proposal/admin HTTP/1.1
+
+# POST http://localhost:3001/proposal HTTP/1.1
+# content-type: application/json
+
+# {
+#     "description": "benot the best investment",
+#     "budget": "100"
+# }
+
+# PUT http://localhost:3001/proposal/9 HTTP/1.1
+# content-type: application/json
+
+# {
+#     "description": "worse investment",
+#     "budget": "100"
+# }
+
+# PUT http://localhost:3001/proposal/1/approve HTTP/1.1
+# content-type: application/json
+
+# GET http://localhost:3001/proposal/approved HTTP/1.1
+
+# DELETE http://localhost:3001/proposal/9 HTTP/1.1
+# content-type: application/json
+
+##VOTE
+# GET http://localhost:3001/vote/1 HTTP/1.1
+
+# GET http://localhost:3001/vote HTTP/1.1
+
+# POST http://localhost:3001/vote/4 HTTP/1.1
+# content-type: application/json
+
+# {
+#     "rate": "2"
+# }
+
+# PUT http://localhost:3001/vote/4 HTTP/1.1
+# content-type: application/json
+
+# {
+#     "rate": "2"
+# }
+
+# GET http://localhost:3001/vote/1/total HTTP/1.1
+
+# PUT http://localhost:3001/vote/1/revoke HTTP/1.1
